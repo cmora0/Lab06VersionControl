@@ -22,8 +22,22 @@ def encode(password):
     return encoded_password
 
 
-while __name__ == '__main__':
+def decode(password):  # based on given encoded 8 eight password, decodes to original by subtracting 3 for each digit
+    decoded_password = ""
+    decoded_char_value = ""
 
+    # for each, checks if there's a remainder less than 0, if so subtracts reminder from 10 to loop back
+    # if no remainder less than 0, subtracts 3 from the digit
+    for i in password:
+        if (int(i) - 3) < 0:
+            decoded_char_value = str(10 + (int(i) - 3))
+        else:
+            decoded_char_value = str((int(i) - 3))
+        decoded_password = decoded_password + decoded_char_value
+    return decoded_password
+
+
+while __name__ == '__main__':
     # quit_menu will equal 1 when the user wants to quit the program.
     quit_menu = 0
 
@@ -59,7 +73,7 @@ while __name__ == '__main__':
 
         # This elif will run if the user selects the menu option 2. Decode.
         elif menu_input == 2:
-
+            pass_to_encode = decode(encoded_pass)
             # Prints the encoded password and the decoded password, which is identical to the original password.
             print('The encoded password is ', encoded_pass, ', and the original password is ', pass_to_encode, '.\n', sep='')
 

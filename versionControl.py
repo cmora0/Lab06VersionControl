@@ -75,7 +75,7 @@ while __name__ == '__main__':
         elif menu_input == 2:
             pass_to_encode = decode(encoded_pass)
             # Prints the encoded password and the decoded password, which is identical to the original password.
-            print('The encoded password is ', encoded_pass, ', and the original password is ', pass_to_encode, '.\n', sep='')
+            print('The encoded password is ', encoded_pass, ', and the original password is ', decode(encoded_pass), '.\n', sep='')
 
         # This elif will cause the program to end if the user selects menu option 3.
         elif menu_input == 3:
